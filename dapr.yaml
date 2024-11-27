@@ -1,0 +1,21 @@
+version: 1
+common:
+  resourcesPath: ./components/
+apps:
+  - appID: dice-1
+    appProtocol: http
+    appDirPath: ./dice/
+    appPort: 7001
+    command: ["go", "run", "."]
+    logLevel: debug
+  - appID: coin-1
+    appProtocol: http
+    appDirPath: ./coin/
+    appPort: 7002
+    command: ["go", "run", "."]
+    logLevel: debug
+  - appID: dapr-go
+    appDirPath: ./simulation/
+    appPort: 6001
+    command: ["go", "run", "."]
+    logLevel: debug
